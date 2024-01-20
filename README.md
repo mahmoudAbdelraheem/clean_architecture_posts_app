@@ -1,6 +1,6 @@
 # clean_architecture_posts_app
 
-A new Flutter project.
+# A new Flutter project clean architecture posts app using BloC and http  .
 
 ## Getting Started
 
