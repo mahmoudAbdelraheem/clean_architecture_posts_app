@@ -1,22 +1,38 @@
+import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/add_update_delete_post/add_update_delete_post_bloc.dart';
+import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/posts/posts_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'core/app_theme.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+import 'injection_container.dart' as di; //! di => dependency injection
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Clean Architecture Posts App',
-      debugShowCheckedModeBanner: false,
-      theme: appTheme,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Posts'),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => di.sl<PostsBloc>()),
+        BlocProvider(create: (_) => di.sl<AddUpdateDeletePostBloc>()),
+      ],
+      child: MaterialApp(
+        title: 'Clean Architecture Posts App',
+        debugShowCheckedModeBanner: false,
+        theme: appTheme,
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Posts'),
+          ),
+          body: Container(),
         ),
-        body: Container(),
       ),
     );
   }
