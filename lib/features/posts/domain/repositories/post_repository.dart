@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 abstract class PostRepository {
   Future<Either<Failure, List<Post>>> getAllPosts();
 //unit its like void don't return anything
-  Future<Either<Failure, Unit>> deletePost(int id);
+  Future<Either<Failure, Unit>> deletePost(int postId);
 
   Future<Either<Failure, Unit>> updatePost(Post post);
 

@@ -7,8 +7,9 @@ import 'package:dartz/dartz.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LocalDataSource {
+  // get posts from cache memory
   Future<List<PostModel>> getCachedPosts();
-
+  // put posts in cache memory
   Future<Unit> cachePosts(List<PostModel> postModels);
 }
 
