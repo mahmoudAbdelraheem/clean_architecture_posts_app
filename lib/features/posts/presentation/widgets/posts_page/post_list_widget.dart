@@ -1,4 +1,6 @@
-import 'package:clean_architecture_posts_app/features/posts/domain/entities/post_entity.dart';
+import '../../../../../core/app_theme.dart';
+import '../../../domain/entities/post_entity.dart';
+import '../../pages/post_details_page.dart';
 import 'package:flutter/material.dart';
 
 class PostListWidget extends StatelessWidget {
@@ -9,19 +11,27 @@ class PostListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       itemCount: posts.length,
-      itemBuilder: (_, index) => _buildListTilePost(posts[index]),
+      itemBuilder: (context, index) =>
+          _buildListTilePost(posts[index], context),
       separatorBuilder: (_, index) => _buildPostDivider(),
     );
   }
 
   // build Single Post
-  Widget _buildListTilePost(Post post) {
+  Widget _buildListTilePost(Post post, BuildContext context) {
     return ListTile(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => PostDetailsPage(post: post),
+          ),
+        );
+      },
       leading: CircleAvatar(
+        backgroundColor: primaryColor,
         child: Text(
           post.id.toString(),
-          style: const TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 16, color: Colors.white),
         ),
       ),
       title: Text(

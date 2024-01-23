@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:clean_architecture_posts_app/features/posts/domain/entities/post_entity.dart';
-import 'package:clean_architecture_posts_app/features/posts/domain/usecases/add_post.dart';
-import 'package:clean_architecture_posts_app/features/posts/domain/usecases/update_post.dart';
+import '../../../domain/entities/post_entity.dart';
+import '../../../domain/usecases/add_post.dart';
+import '../../../domain/usecases/update_post.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 

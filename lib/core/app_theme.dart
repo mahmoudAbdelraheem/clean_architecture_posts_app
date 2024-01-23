@@ -4,6 +4,7 @@ const primaryColor = Color(0xff082659);
 const secondaryColor = Color(0xff51eec2);
 
 final appTheme = ThemeData(
+  useMaterial3: false,
   appBarTheme: const AppBarTheme(
     backgroundColor: primaryColor,
     centerTitle: true,

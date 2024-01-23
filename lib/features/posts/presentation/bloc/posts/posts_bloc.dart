@@ -1,7 +1,7 @@
-import 'package:clean_architecture_posts_app/core/errors/error_massage.dart';
-import 'package:clean_architecture_posts_app/core/errors/failures.dart';
-import 'package:clean_architecture_posts_app/features/posts/domain/entities/post_entity.dart';
-import 'package:clean_architecture_posts_app/features/posts/domain/usecases/get_all_posts.dart';
+import '../../../../../core/errors/error_massage.dart';
+import '../../../../../core/errors/failures.dart';
+import '../../../domain/entities/post_entity.dart';
+import '../../../domain/usecases/get_all_posts.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';

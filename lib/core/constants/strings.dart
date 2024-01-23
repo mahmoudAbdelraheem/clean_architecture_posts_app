@@ -3,3 +3,6 @@ const String baseUrl = 'https://jsonplaceholder.typicode.com/';
 const String CACHED_POSTS = 'CACHED_POSTS';
 
 const Map<String, String> myHeaders = {'Content-Type': 'application/json'};
+
+const String postsPageRoute = '/';
+const String addUpdatePageRoute = '/addUpdatePageRoute';

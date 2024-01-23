@@ -1,9 +1,9 @@
-import 'package:clean_architecture_posts_app/core/errors/exceptions.dart';
-import 'package:clean_architecture_posts_app/core/errors/failures.dart';
-import 'package:clean_architecture_posts_app/core/network/internet_info.dart';
-import 'package:clean_architecture_posts_app/features/posts/data/models/post_model.dart';
-import 'package:clean_architecture_posts_app/features/posts/domain/entities/post_entity.dart';
-import 'package:clean_architecture_posts_app/features/posts/domain/repositories/post_repository.dart';
+import '../../../../core/errors/exceptions.dart';
+import '../../../../core/errors/failures.dart';
+import '../../../../core/network/internet_info.dart';
+import '../models/post_model.dart';
+import '../../domain/entities/post_entity.dart';
+import '../../domain/repositories/post_repository.dart';
 import 'package:dartz/dartz.dart';
 
 import '../datasources/local_data_source.dart';
@@ -52,8 +52,7 @@ class PostsRepositoryImp implements PostRepository {
   @override
   Future<Either<Failure, Unit>> addPost(Post post) async {
     //put post entity to post model
-    final PostModel postModel =
-        PostModel(id: post.id, title: post.title, body: post.body);
+    final PostModel postModel = PostModel(title: post.title, body: post.body);
     return await _getMassage(() => remoteDataSource.addPost(postModel));
   }
 

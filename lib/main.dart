@@ -1,6 +1,6 @@
-import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/add_update_delete_post/add_update_delete_post_bloc.dart';
-import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/posts/posts_bloc.dart';
-import 'package:clean_architecture_posts_app/features/posts/presentation/pages/posts_page.dart';
+import 'features/posts/presentation/bloc/add_update_delete_post/add_update_delete_post_bloc.dart';
+import 'features/posts/presentation/bloc/posts/posts_bloc.dart';
+import 'features/posts/presentation/pages/posts_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/app_theme.dart';
