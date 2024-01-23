@@ -21,10 +21,10 @@ final class SuccessAddUpdateDeletePostState extends AddUpdateDeletePostState {
 }
 
 final class ErrorAddUpdateDeletePostState extends AddUpdateDeletePostState {
-  final String errorMassage;
+  final String errorMessage;
 
-  const ErrorAddUpdateDeletePostState({required this.errorMassage});
+  const ErrorAddUpdateDeletePostState({required this.errorMessage});
 
   @override
-  List<Object> get props => [errorMassage];
+  List<Object> get props => [errorMessage];
 }

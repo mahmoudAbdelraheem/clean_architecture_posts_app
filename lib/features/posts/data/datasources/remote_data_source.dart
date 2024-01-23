@@ -30,6 +30,7 @@ class RemoteDataSourceImp implements RemoteDataSource {
       final List<PostModel> postModels = decodedJson
           .map<PostModel>((postModelJson) => PostModel.fromJson(postModelJson))
           .toList();
+      //print(postModels.toString());
       return postModels;
     } else {
       throw ServerException();

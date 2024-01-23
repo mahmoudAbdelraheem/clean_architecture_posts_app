@@ -53,7 +53,7 @@ class AddUpdateDeletePostBloc
   ) {
     return either.fold(
       (failure) => ErrorAddUpdateDeletePostState(
-        errorMassage: _getErrorMassage(failure),
+        errorMessage: _getErrorMassage(failure),
       ),
       (r) => SuccessAddUpdateDeletePostState(
         successMessage: _getSuccessMassage(s),

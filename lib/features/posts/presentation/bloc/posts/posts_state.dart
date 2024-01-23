@@ -21,10 +21,10 @@ final class LoadedPostState extends PostsState {
 }
 
 final class ErrorPostState extends PostsState {
-  final String massage;
+  final String message;
 
-  const ErrorPostState({required this.massage});
+  const ErrorPostState({required this.message});
 
   @override
-  List<Object> get props => [massage];
+  List<Object> get props => [message];
 }

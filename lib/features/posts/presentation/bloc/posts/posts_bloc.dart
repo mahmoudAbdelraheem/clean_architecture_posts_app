@@ -33,12 +33,12 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
   PostsState _mapFailureOrPostsToState(Either<Failure, List<Post>> either) {
     //fold form dartz and it's return left ,rigth of either...
     return either.fold(
-        (failure) => ErrorPostState(massage: _getErrorMassage(failure)),
+        (failure) => ErrorPostState(message: _getErrorMessage(failure)),
         (posts) => LoadedPostState(posts: posts));
   }
 
   // get error massage based on error failure
-  String _getErrorMassage(Failure failure) {
+  String _getErrorMessage(Failure failure) {
     switch (failure.runtimeType) {
       case ServerFailure:
         return ErrorMassage.serverErrorMsg;
